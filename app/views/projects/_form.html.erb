@@ -1,0 +1,23 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-horizontal">
+    <%= f.input :project_name %>
+    <%= f.input :project_length %>
+    <%= f.input :project_type %>
+    <%= f.input :project_hometown %>
+    <%= f.input :project_info %>
+    <%= f.input :project_start %>
+    <%= f.input :project_schedinfo %>
+    <b>Skills Needed:</b><br />
+    <%= hidden_field_tag "project[skill_ids][]", nil %>
+    <% Skill.all.each do |skill| %>
+      <%= check_box_tag "project[skill_ids][]", skill.id, @project.skill_ids.include?(skill.id), id: dom_id(skill) %>
+      <%= label_tag dom_id(skill), skill.name %><br>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
