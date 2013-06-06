@@ -1,6 +1,7 @@
 $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 @import 'bootstrap';
+@import 'bootstrap-responsive';
 
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
@@ -10,7 +11,6 @@ body {
 	padding-top: 60px;
 }
 
-@import 'bootstrap-responsive';
 
 .footer {
 	margin-top: 50px;
